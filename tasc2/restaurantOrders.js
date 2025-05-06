@@ -20,3 +20,14 @@ const clientIrina = { name: "Ирина" };
 orders.set(clientAlexey, ["Пицца 'Пепперони'", "Тирамису"]);
 orders.set(clientMaria, ["Суши 'Калифорния'", "Пицца 'Маргарита'"]);
 orders.set(clientIrina, ["Чизкейк"]);
+
+function displayOrders(orders) {
+    for (const [client, dishes] of orders) {
+        console.log(`${client.name} заказал:`);
+        for (const dish of dishes) {
+            const chef = dishes.get(dish);
+            console.log(`- ${dish} (готовит: ${chef})`);
+        }
+        console.log('');
+    }
+}
