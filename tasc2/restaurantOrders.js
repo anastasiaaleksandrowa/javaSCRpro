@@ -31,3 +31,4 @@ function displayOrders(orders) {
         console.log('');
     }
 }
+displayOrders(orders);
