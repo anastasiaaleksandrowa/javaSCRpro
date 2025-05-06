@@ -10,3 +10,21 @@ const albums = [
     { title: "Death Magnetic", artist: "Metallica", year: "2008" },
     { title: "Hardwired... to Self-Destruct", artist: "Metallica", year: "2016" }
 ];
+const musicCollection = {
+    albums,
+
+    [Symbol.iterator]: function() {
+        let index = 0;
+        const albums = this.albums;
+
+        return {
+            next() {
+                if (index < albums.length) {
+                    return { value: albums[index++], done: false };
+                } else {
+                    return { done: true };
+                }
+            }
+        };
+    }
+};
